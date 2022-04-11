@@ -1,3 +1,4 @@
 # My calculator!
 
-[calculator](https://user-images.githubusercontent.com/91279474/162777107-16883260-f104-4e77-8d84-f65a310a1756.png)
+
+![calculator](https://user-images.githubusercontent.com/91279474/162777279-af1c9b3e-8ea8-4fd6-bdb7-38da5dbc9109.png)
