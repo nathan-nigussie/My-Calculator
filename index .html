@@ -1,122 +1,99 @@
-
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <title>Calculator</title>
-        <link rel="stylesheet" href="style.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
-      .nopadding {
-         padding:0.5px;
-         padding-bottom: 0px;
-      }
-      .btn_font{
-          font-size: 20px;
-          margin-bottom: 3px;
-          
-      }
-      .display-place {
-                 background-color: rgba(204, 191, 191, 0.842);
-                 border: solid black 2px;
-                 color: rgb(31, 28, 28);
-                 border-radius: 5px;
-                 width: 400px;
-                 height:50px;
-                 padding-bottom: 15px;
-                 font-weight: bolder;
-                 margin-bottom:3px;
-                 text-align: end;
-                 font-size: 25px;
-                 padding-right: 8px;
-                 padding-top:15px;
-                 
-                 
-               }
+        .nopadding {
+            padding: 0.5px;
+            padding-bottom: 0px;
+        }
+        
+        .btn_font {
+            font-size: 25px;
+            margin-bottom: 3px;
+        }
     </style>
-    </head>
-   
-<body style="background-color: #ffffff">    
-    <h1 class="text-center">Html JavaScript Calculator</h1>
+</head>
+
+<body style="background-color: #ecdb77">
+    <h1 class="text-center">My Calculator</h1>
     <div class="container" style="width: 400px;padding: 30px;border: 3px solid rgb(105, 68, 68);margin-top: 45px; box-shadow: 5px 5px 9px #010101;border-radius: 10px;background: whitesmoke">
-         <div class="row">
-            <div class="col-lg-12 nopadding" >
-                <label class="display-place" type="text" id="display" ></label>
-            </div>
-         </div> 
         <div class="row">
-            <div class="col-xs-3 nopadding" >
-               <button id="one" class="btn btn-primary btn-block btn_font" type="button" value='1'>1</button>
-            </div>
-            <div class="col-xs-3 nopadding">
-                <button id="two" class="btn btn-primary btn-block btn_font" type="button" value='2'>2</button>
-            </div>
-            <div class="col-xs-3 nopadding">
-                <button id="three" class="btn btn-primary btn-block btn_font" type="button"value='3'>3</button>
-            </div>
-            <div class="col-xs-3 nopadding">
-                <button id="add" class="btn btn-success btn-block btn_font" type="button"value="+">+</button>
+            <div class="col-lg-12 nopadding">
+                <input type="text" name="display" id="display" class="form-control" style="padding:10px;font-size:30px;height:50px;margin-bottom: 10px;" disabled>
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-3 nopadding" >
-                <button id="four" class="btn btn-primary btn-block btn_font" type="button"value='4'>4</button>
+            <div class="col-xs-3 nopadding">
+                <button id="one" class="btn btn-primary btn-block btn_font" onclick="userClickButton('1')">1</button>
             </div>
             <div class="col-xs-3 nopadding">
-                <button id="five" class="btn btn-primary btn-block btn_font" type="button"value='5'">5</button>
+                <button id="two" class="btn btn-primary btn-block btn_font" onclick="userClickButton('2')">2</button>
             </div>
             <div class="col-xs-3 nopadding">
-                <button id="six" class="btn btn-primary btn-block btn_font" type="button"value='6'>6</button>
+                <button id="three" class="btn btn-primary btn-block btn_font" onclick="userClickButton('3')">3</button>
             </div>
             <div class="col-xs-3 nopadding">
-                <button id="minus" class="btn btn-success btn-block btn_font" type="button"value="-">-</button>
+                <button id="add" class="btn btn-success btn-block btn_font" onclick="userClickButton('+')">+</button>
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-3 nopadding" >
-                <button id="seven" class="btn btn-primary btn-block btn_font" type="button"value='7'>7</button>
+            <div class="col-xs-3 nopadding">
+                <button id="four" class="btn btn-primary btn-block btn_font" onclick="userClickButton('4')">4</button>
             </div>
             <div class="col-xs-3 nopadding">
-                <button id="eight" class="btn btn-primary btn-block btn_font" type="button"value='8'>8</button>
+                <button id="five" class="btn btn-primary btn-block btn_font" onclick="userClickButton('5')">5</button>
             </div>
             <div class="col-xs-3 nopadding">
-                <button id="nine" class="btn btn-primary btn-block btn_font" type="button"value='9'>9</button>
+                <button id="six" class="btn btn-primary btn-block btn_font" onclick="userClickButton('6')">6</button>
             </div>
             <div class="col-xs-3 nopadding">
-                <button id="multiply" class="btn btn-success btn-block btn_font" type="button"value="*"">*</button>
+                <button id="minus" class="btn btn-success btn-block btn_font" onclick="userClickButton('-')">-</button>
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-3 nopadding" >
-                <button id="dot" class="btn btn-primary btn-block btn_font" type="button"value=".">.</button>
+            <div class="col-xs-3 nopadding">
+                <button id="seven" class="btn btn-primary btn-block btn_font" onclick="userClickButton('7')">7</button>
             </div>
             <div class="col-xs-3 nopadding">
-                <button id="zero" class="btn btn-primary btn-block btn_font" type="button"value='0'>0</button>
+                <button id="eight" class="btn btn-primary btn-block btn_font" onclick="userClickButton('8')">8</button>
             </div>
             <div class="col-xs-3 nopadding">
-                <button id="equal" class="btn btn-primary btn-block btn_font" type="button" value="=">=</button>
+                <button id="nine" class="btn btn-primary btn-block btn_font" onclick="userClickButton('9')">9</button>
             </div>
             <div class="col-xs-3 nopadding">
-                <button id="divide" class="btn btn-success btn-block btn_font" type="button" value="/">/</button>
+                <button id="multiply" class="btn btn-success btn-block btn_font" onclick="userClickButton('*')">*</button>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-12nopadding" >
-                <button id="divide" class="btn btn-danger  btn-block btn_font" type="button" value='C'>CLEAR</button>
-            </div> 
-                    
-        </div>       
+            <div class="col-xs-3 nopadding">
+                <button id="dot" class="btn btn-primary btn-block btn_font" onclick="userClickButton('.')">.</button>
+            </div>
+            <div class="col-xs-3 nopadding">
+                <button id="zero" class="btn btn-primary btn-block btn_font" onclick="userClickButton('0')">0</button>
+            </div>
+            <div class="col-xs-3 nopadding">
+                <button id="equal" class="btn btn-primary btn-block btn_font" onclick="evaluateInputs()">=</button>
+            </div>
+            <div class="col-xs-3 nopadding">
+                <button id="divide" class="btn btn-success btn-block btn_font" onclick="userClickButton('/')">/</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12nopadding">
+                <button id="divide" class="btn btn-danger  btn-block btn_font" onclick="clearDisplay('C')">CLEAR</button>
+            </div>
+
+        </div>
     </div>
-<script src="newCalc.js"></script>
-</body>    
-</html>        
-        
-            
-                    
-          
-        
+    <script src="main.js"></script>
+</body>
 
-
+</html>
